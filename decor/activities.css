@@ -27,3 +27,12 @@
   padding: 16px;
   border-bottom: 1px solid var(--goalborder);
 }
+
+.category-card > .ring-card {
+  margin: 18px 0;
+  max-width: 260px;
+}
+
+.activity-sublist {
+  margin-top: 18px;
+}

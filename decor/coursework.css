@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(140px, 1fr));
   gap: 10px;
-  margin: 14px 0 22px;
+  margin: 14px 0 18px;
 }
 
 .grade-scale span {
   border: 1px solid var(--gradescale-border);
   background: var(--gradescale-background);
-  border-radius: 16px;
-  padding: 10px 12px;
+  border-radius: 14px;
+  padding: 8px 10px;
   color: var(--pink-700);
   font-weight: 700;
   text-align: center;
@@ -17,87 +17,189 @@
 
 .assignment-list {
   display: grid;
-  gap: 12px;
-  margin-top: 14px;
+  gap: 10px;
+  margin-top: 12px;
 }
 
 .assignment-card {
   border: 1px solid var(--assignmentcard-border);
   background: var(--assignmentcard-background);
-  border-radius: 20px;
-  padding: 14px;
+  border-radius: 18px;
+  padding: 12px 14px;
+}
+
+.assignment-card .item-header {
+  align-items: center;
+}
+
+.assignment-card p {
+  margin: 6px 0 0;
 }
 
 .module-summary {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin: 8px 0;
+  gap: 8px;
+  margin: 4px 0 0;
 }
 
 .module-summary span {
   background: var(--modulesummarybackground);
   color: var(--pink-700);
   border-radius: 999px;
-  padding: 6px 11px;
+  padding: 5px 10px;
   font-weight: 700;
 }
 
 .year-box {
-  margin: 22px 0;
-  padding: 24px;
-  border-radius: 26px;
+  margin: 16px 0;
+  padding: 18px;
+  border-radius: 24px;
   background: var(--yearbox-background);
   border: 1px solid var(--yearbox-border);
   box-shadow: var(--shadow);
 }
 
 .year-box > .category-card:first-of-type {
-    margin-top: 26px;
+  margin-top: 18px;
 }
 
-.year-box summary {
-    list-style: none;
-    cursor: pointer;
-
-    display: grid;
-    grid-template-columns: 40px 1fr auto;
-    align-items: center;
-
-    padding: 6px 0;
-
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--pink-700);
+.year-box > summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--pink-700);
 }
 
-.year-title{
-    justify-self:center;
-    text-align:center;
+.year-arrow {
+  justify-self: start;
 }
 
-.year-average{
-    justify-self:end;
+.year-title {
+  justify-self: center;
+  text-align: center;
 }
 
-.year-arrow::before{
-    content:"▶";
-    display:block;
-    font-size:18px;
-    transition:.25s ease;
+.year-average {
+  justify-self: end;
+  text-align: right;
 }
 
-.year-box[open] .year-arrow::before{
-    transform:rotate(90deg);
+.year-arrow::before {
+  content: "▶";
+  display: block;
+  font-size: 16px;
+  transition: .25s ease;
+}
+
+.year-box[open] > summary .year-arrow::before {
+  transform: rotate(90deg);
 }
 
 .course-row {
   display: grid;
   gap: 8px;
-  padding: 16px;
+  padding: 14px;
   border-bottom: 1px solid var(--goalborder);
 }
 
 .course-row:last-child {
   border-bottom: 0;
+}
+
+.module-toggle {
+  padding: 18px 20px;
+  border-radius: 24px;
+}
+
+.module-summary-toggle {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+}
+
+.module-summary-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.module-summary-toggle .item-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 18px;
+  width: 100%;
+}
+
+.module-summary-toggle .action-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-self: start;
+}
+
+.module-summary-toggle .item-header > div:first-child {
+  flex: 1;
+}
+
+.module-summary-toggle h3 {
+  margin-bottom: 8px;
+  font-size: 22px;
+  line-height: 1.15;
+  margin: 0 0 6px;
+  font-weight: 700;
+}
+
+.module-toggle .assignment-list {
+  margin-top: 14px;
+}
+
+.module-toggle .action-row button,
+.assignment-card .action-row button {
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 16px;
+}
+
+
+#classificationDisplay {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#moduleAverageDisplay {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.coursework-summary h2,
+.coursework-summary p {
+  margin: 0;
+}
+
+.coursework-summary p {
+  margin-top: 6px;
+}
+
+.coursework-disclaimer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--pink-500);
+  opacity: 0.8;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.tentative-tag {
+  background: var(--modulesummarybackground);
+  color: #d97706;
+  border: 1px solid #f6d38b;
+  border-radius: 999px;
+  padding: 5px 10px;
+  font-weight: 700;
 }

@@ -184,7 +184,10 @@
       <form id="categoryForm" class="form-card collapsible-form">
         <h3>Add Category</h3>
         <input id="categoryName" placeholder="Category e.g. Volunteering" required />
-        <input id="categoryGoal" type="number" placeholder="Goal hours e.g. 120" min="1" required />
+        <input id="categoryGoal"
+          type="number"
+          placeholder="Goal hours (optional)"
+          min="0">
         <button>Add Category</button>
       </form>
 
@@ -197,11 +200,22 @@
       
       <form id="activityForm" class="form-card collapsible-form">
         <h3>Add Specific Activity</h3>
-        <select id="activityCategory" required></select>
-        <input id="activityName" placeholder="Activity name e.g. Hospital volunteering" required />
-        <input id="activityDate" type="date" required />
-        <input id="activityHours" type="number" placeholder="Hours completed" min="0" step="0.5" required />
-        <textarea id="activityNotes" placeholder="Notes, responsibilities, reflection"></textarea>
+        <select id="activityCategory"></select>
+        <input id="activityName" placeholder="Activity name" required>
+        <input id="activityRole" placeholder="Role / Position">
+        <input id="activityOrg" placeholder="Organization">
+        <input id="activityStartDate" type="date">
+        <input id="activityEndDate" type="date">
+        <input id="activityHoursPerWeek" type="number" placeholder="Hours per week optional" min="0" step="0.5" />
+        <input id="activityHours" type="number" placeholder="Total hours optional" min="0" step="0.5" />
+        <input id="activityLink"
+              placeholder="Website / Certificate / Portfolio (optional)">
+        <textarea id="activityImpact"
+        placeholder="Impact, achievements, reflection, responsibilities"></textarea>
+        <textarea id="activitySkills"
+        placeholder="Skills gained"></textarea>
+        <textarea id="activityNotes"
+        placeholder="Additional notes"></textarea>
         <button>Add Activity</button>
       </form>
 
@@ -284,22 +298,38 @@
         <h3>Add Assignment to Module</h3>
         <select id="assignmentModule" required></select>
         <input id="assignmentName" placeholder="Assignment e.g. Lab report" required />
-        <input id="assignmentMark" type="number" placeholder="Mark % e.g. 72" min="0" max="100" step="0.1" required />
+        <input id="assignmentMark" type="number" placeholder="Mark % e.g. 72" min="0" max="100" step="0.1" />
         <input id="assignmentWeight" type="number" placeholder="Weighting % e.g. 30" min="0" max="100" step="0.1" required />
         <input id="assignmentDate" type="date" />
         <button>Add Assignment</button>
+        <select id="assignmentStatus">
+          <option value="graded">Graded</option>
+          <option value="tentative">Tentative / Not graded yet</option>
+        </select>
       </form>
 
       <div class="glass-card">
-        <h3>Average of Module Totals: <span id="moduleAverageDisplay">—</span></h3>
-        <p class="hint" id="classificationDisplay">Classification: —</p>
+        <h3>
+            Classification:
+            <span id="classificationDisplay">—</span>
+        </h3>
+
+        <p class="hint">
+            Average of Module Totals:
+            <span id="moduleAverageDisplay">—</span>
+        </p>
+
         <div class="grade-scale">
-          <span>1st Honors: 70%–100%</span>
-          <span>2:1 Honors: 60%–69%</span>
-          <span>2:2 Honors: 50%–59%</span>
-          <span>3rd Honors: 40%–49%</span>
+            <span>1st Honors: 70%–100%</span>
+            <span>2:1 Honors: 60%–69%</span>
+            <span>2:2 Honors: 50%–59%</span>
+            <span>3rd Honors: 40%–49%</span>
         </div>
+
         <div id="moduleList"></div>
+        <p class="coursework-disclaimer">
+          * In the instance of any assignments being marked as <strong>Tentative / Not graded yet</strong>, Module totals are estimated by assuming tentative assignments are marked 100%. Actual module totals and classifications will update automatically once final grades are entered.
+        </p>
       </div>
     </section>
 

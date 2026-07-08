@@ -31,6 +31,8 @@ document.querySelectorAll(".form-toggle").forEach(button => {
   });
 });
 
+openPage(localStorage.getItem("emsPlannerCurrentPage") || "dashboard");
+
 startAuth(async (user) => {
   console.log("Signed in as:", user.email);
 
@@ -46,7 +48,6 @@ startAuth(async (user) => {
   setData(loadedData);
 
   renderAll();
-  openPage(localStorage.getItem("emsPlannerCurrentPage") || "dashboard");
 });
 
 window.toggleEdit = toggleEdit;

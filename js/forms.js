@@ -8,7 +8,7 @@ document.getElementById("categoryForm").addEventListener("submit", e => {
   data.categories.push({
     id: crypto.randomUUID(),
     name: categoryName.value,
-    goal: Number(categoryGoal.value),
+    goal: Number(categoryGoal.value || 0),
     activities: []
   });
   e.target.reset();
@@ -27,8 +27,15 @@ document.getElementById("activityForm").addEventListener("submit", e => {
   category.activities.push({
     id: crypto.randomUUID(),
     name: activityName.value,
-    date: activityDate.value,
+    role: activityRole.value,
+    organization: activityOrg.value,
+    startDate: activityStartDate.value,
+    endDate: activityEndDate.value,
+    hoursPerWeek: Number(activityHoursPerWeek.value || 0),
     hours: Number(activityHours.value),
+    link: activityLink.value,
+    impact: activityImpact.value,
+    skills: activitySkills.value,
     notes: activityNotes.value
   });
   e.target.reset();
@@ -83,9 +90,10 @@ document.getElementById("assignmentForm").addEventListener("submit", e => {
   module.assignments.push({
     id: crypto.randomUUID(),
     name: assignmentName.value,
-    mark: Number(assignmentMark.value),
+    mark: assignmentStatus.value === "tentative" ? "" : Number(assignmentMark.value),
     weight: Number(assignmentWeight.value),
-    date: assignmentDate.value
+    date: assignmentDate.value,
+    status: assignmentStatus.value
   });
   e.target.reset();
   e.target.querySelectorAll("input, textarea, select").forEach(field => {
