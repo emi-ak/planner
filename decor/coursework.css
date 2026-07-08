@@ -128,22 +128,24 @@
 }
 
 .module-summary-toggle .item-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 18px;
   width: 100%;
 }
 
+.module-summary-toggle .item-header > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
 .module-summary-toggle .action-row {
+  margin-left: auto;
   display: flex;
   flex-wrap: nowrap;
   gap: 10px;
-  align-self: start;
-}
-
-.module-summary-toggle .item-header > div:first-child {
-  flex: 1;
+  align-self: flex-start;
 }
 
 .module-summary-toggle h3 {
