@@ -128,24 +128,22 @@
 }
 
 .module-summary-toggle .item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 20px;
   width: 100%;
 }
 
 .module-summary-toggle .item-header > div:first-child {
-  flex: 1;
   min-width: 0;
 }
 
 .module-summary-toggle .action-row {
-  margin-left: auto;
   display: flex;
-  flex-wrap: nowrap;
   gap: 10px;
-  align-self: flex-start;
+  white-space: nowrap;
+  justify-self: end;
 }
 
 .module-summary-toggle h3 {

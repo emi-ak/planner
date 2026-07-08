@@ -100,6 +100,7 @@ export function renderModules() {
                           : ""
                       }
                     </div>
+                  </div>
 
                   <div class="action-row">
                     <button class="soft-btn" onclick="toggleEdit('edit-module-${module.id}')">Edit</button>
